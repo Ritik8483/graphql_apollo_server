@@ -1,0 +1,16 @@
+Install 
+  npm install @apollo/server graphql
+  install nodemon and add start script in index.js file
+  install cors express graphql-tag sequelize tedious
+--------------------------
+
+
+
+"@apollo/server": "^5.1.0",
+      "@as-integrations/express4": "^1.1.2",
+      "cors": "^2.8.5",
+      "express": "^5.1.0",
+      "graphql": "^16.12.0",
+      "graphql-tag": "^2.12.6",
+      "sequelize": "^6.37.7",
+      "tedious": "^18.6.1"
