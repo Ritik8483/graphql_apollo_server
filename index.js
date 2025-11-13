@@ -57,6 +57,7 @@ const { expressMiddleware } = require('@as-integrations/express4');
 const sequelize = require("./sequelizeFile"); 
 const typeDefs = require("./src/graphql/schema");
 const resolvers = require("./src/graphql/resolvers");
+const { authMiddleware } = require("./src/middleware/authMiddleware");
 
 const PORT = 4000;
 
@@ -80,10 +81,11 @@ async function startApolloServer() {
   app.use(
     "/graphql",
     expressMiddleware(apolloServer, {
-    //   context: async ({ req }) => {
-    //     // Optional: add auth or user info to context
-    //     return { token: req.headers.authorization || "" };
-    //   },
+    //   context: async ({ req }) => {          //used to enable middleware
+        // Optional: add auth or user info to context
+        // const contextData = await authMiddleware(req);
+        // return contextData;
+    //   }, 
     })
   );
 
@@ -103,3 +105,13 @@ async function startApolloServer() {
 }
 
 startApolloServer();
+
+
+//oncle middleware is enable login first
+// mutation {
+//   login(email: "ritik@example.com", password: "123456") {
+//     id
+//     email
+//     token
+//   }
+// }

@@ -14,3 +14,13 @@ Install
       "graphql-tag": "^2.12.6",
       "sequelize": "^6.37.7",
       "tedious": "^18.6.1"
+
+
+Mutation : email and token are the things what mutation returns
+mutation Mutation($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    email
+    token
+  }
+}
+
